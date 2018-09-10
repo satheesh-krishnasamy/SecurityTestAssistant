@@ -55,7 +55,7 @@ namespace SecurityTestAssistant.Library.Testers.Implementation
                 {
                     this.AddResult(new AnalysisResult(
                         $"Cookie: {cookie.Name} has length {sessionIdLengthInBytes} bytes. The session ID length must be at least 128 bits (16 bytes) to avoid brute force attack.",
-                        FindingType.Warning,
+                        SeverityType.Warning,
                         $"Use a lengthy value for cookie ({cookie.Name}). Refer the URL.",
                         "Session ID length",
                         response.GetAdditionalProperties(),

@@ -47,7 +47,7 @@ namespace SecurityTestAssistant.Library.Testers.Implementation
                     this.AddResult(
                                 new AnalysisResult(
                                     $"Header {hdr.Name} discloses the server used by the web application [Found server: {serverHdrValue.ServerOrTechnologyName}].",
-                                    FindingType.Error,
+                                    SeverityType.Error,
                                     "Remove the header or change the value for this header to some other value that does not say anything about the server.",
                                     "Server fingerprinting",
                                     response.GetAdditionalProperties(),

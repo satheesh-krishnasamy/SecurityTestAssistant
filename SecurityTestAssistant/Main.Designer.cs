@@ -51,16 +51,15 @@
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.grpBoxResults = new System.Windows.Forms.GroupBox();
             this.resultsGrid = new System.Windows.Forms.DataGridView();
+            this.grpBoxMoreInfo = new System.Windows.Forms.GroupBox();
+            this.gridViewAdditionalInfo = new System.Windows.Forms.DataGridView();
+            this.hostsToListenBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnExportReport = new System.Windows.Forms.Button();
+            this.resultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.recommendationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.referenceUrlDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.resultBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.grpBoxMoreInfo = new System.Windows.Forms.GroupBox();
-            this.gridViewAdditionalInfo = new System.Windows.Forms.DataGridView();
-            this.hostsToListenBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControlMainWindow.SuspendLayout();
             this.tabDefine.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -80,10 +79,10 @@
             this.splitContainer3.SuspendLayout();
             this.grpBoxResults.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.resultsGrid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.resultBindingSource)).BeginInit();
             this.grpBoxMoreInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewAdditionalInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hostsToListenBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resultBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlMainWindow
@@ -251,6 +250,7 @@
             // 
             // splitContainer2.Panel1
             // 
+            this.splitContainer2.Panel1.Controls.Add(this.btnExportReport);
             this.splitContainer2.Panel1.Controls.Add(this.btnStopAnalysis);
             this.splitContainer2.Panel1.Controls.Add(this.chkMoreInfo);
             this.splitContainer2.Panel1.Controls.Add(this.chkGroupResults);
@@ -349,9 +349,7 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
-            this.recommendationDataGridViewTextBoxColumn,
-            this.referenceUrlDataGridViewTextBoxColumn,
-            this.dataGridViewTextBoxColumn1});
+            this.recommendationDataGridViewTextBoxColumn});
             this.resultsGrid.DataSource = this.resultBindingSource;
             this.resultsGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.resultsGrid.Location = new System.Drawing.Point(3, 16);
@@ -360,6 +358,48 @@
             this.resultsGrid.Size = new System.Drawing.Size(704, 334);
             this.resultsGrid.TabIndex = 14;
             this.resultsGrid.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.ResultsGrid_RowEnter);
+            // 
+            // grpBoxMoreInfo
+            // 
+            this.grpBoxMoreInfo.Controls.Add(this.gridViewAdditionalInfo);
+            this.grpBoxMoreInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grpBoxMoreInfo.Location = new System.Drawing.Point(0, 0);
+            this.grpBoxMoreInfo.Name = "grpBoxMoreInfo";
+            this.grpBoxMoreInfo.Size = new System.Drawing.Size(167, 353);
+            this.grpBoxMoreInfo.TabIndex = 0;
+            this.grpBoxMoreInfo.TabStop = false;
+            this.grpBoxMoreInfo.Text = "More information";
+            // 
+            // gridViewAdditionalInfo
+            // 
+            this.gridViewAdditionalInfo.AllowUserToAddRows = false;
+            this.gridViewAdditionalInfo.AllowUserToDeleteRows = false;
+            this.gridViewAdditionalInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridViewAdditionalInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridViewAdditionalInfo.Location = new System.Drawing.Point(3, 16);
+            this.gridViewAdditionalInfo.Name = "gridViewAdditionalInfo";
+            this.gridViewAdditionalInfo.ReadOnly = true;
+            this.gridViewAdditionalInfo.Size = new System.Drawing.Size(161, 334);
+            this.gridViewAdditionalInfo.TabIndex = 15;
+            // 
+            // hostsToListenBindingSource
+            // 
+            this.hostsToListenBindingSource.AllowNew = false;
+            // 
+            // btnExportReport
+            // 
+            this.btnExportReport.AutoSize = true;
+            this.btnExportReport.Location = new System.Drawing.Point(193, 5);
+            this.btnExportReport.Name = "btnExportReport";
+            this.btnExportReport.Size = new System.Drawing.Size(124, 23);
+            this.btnExportReport.TabIndex = 14;
+            this.btnExportReport.Text = "Export as HTML report";
+            this.btnExportReport.UseVisualStyleBackColor = true;
+            this.btnExportReport.Click += new System.EventHandler(this.btnExportReport_Click);
+            // 
+            // resultBindingSource
+            // 
+            this.resultBindingSource.DataSource = typeof(SecurityTestAssistant.Library.Models.AnalysisResult);
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -396,58 +436,6 @@
             this.recommendationDataGridViewTextBoxColumn.ReadOnly = true;
             this.recommendationDataGridViewTextBoxColumn.Width = 115;
             // 
-            // referenceUrlDataGridViewTextBoxColumn
-            // 
-            this.referenceUrlDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.referenceUrlDataGridViewTextBoxColumn.DataPropertyName = "ReferenceUrl";
-            this.referenceUrlDataGridViewTextBoxColumn.HeaderText = "Reference Urls";
-            this.referenceUrlDataGridViewTextBoxColumn.Name = "referenceUrlDataGridViewTextBoxColumn";
-            this.referenceUrlDataGridViewTextBoxColumn.ReadOnly = true;
-            this.referenceUrlDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "AdditionalProperties";
-            this.dataGridViewTextBoxColumn1.HeaderText = "More info";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewTextBoxColumn1.Text = "More info";
-            this.dataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // resultBindingSource
-            // 
-            this.resultBindingSource.DataSource = typeof(SecurityTestAssistant.Library.Models.AnalysisResult);
-            // 
-            // grpBoxMoreInfo
-            // 
-            this.grpBoxMoreInfo.Controls.Add(this.gridViewAdditionalInfo);
-            this.grpBoxMoreInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grpBoxMoreInfo.Location = new System.Drawing.Point(0, 0);
-            this.grpBoxMoreInfo.Name = "grpBoxMoreInfo";
-            this.grpBoxMoreInfo.Size = new System.Drawing.Size(167, 353);
-            this.grpBoxMoreInfo.TabIndex = 0;
-            this.grpBoxMoreInfo.TabStop = false;
-            this.grpBoxMoreInfo.Text = "More information";
-            // 
-            // gridViewAdditionalInfo
-            // 
-            this.gridViewAdditionalInfo.AllowUserToAddRows = false;
-            this.gridViewAdditionalInfo.AllowUserToDeleteRows = false;
-            this.gridViewAdditionalInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridViewAdditionalInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridViewAdditionalInfo.Location = new System.Drawing.Point(3, 16);
-            this.gridViewAdditionalInfo.Name = "gridViewAdditionalInfo";
-            this.gridViewAdditionalInfo.ReadOnly = true;
-            this.gridViewAdditionalInfo.Size = new System.Drawing.Size(161, 334);
-            this.gridViewAdditionalInfo.TabIndex = 15;
-            // 
-            // hostsToListenBindingSource
-            // 
-            this.hostsToListenBindingSource.AllowNew = false;
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -480,10 +468,10 @@
             this.splitContainer3.ResumeLayout(false);
             this.grpBoxResults.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.resultsGrid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.resultBindingSource)).EndInit();
             this.grpBoxMoreInfo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridViewAdditionalInfo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hostsToListenBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resultBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -514,15 +502,14 @@
         private System.Windows.Forms.SplitContainer splitContainer3;
         private System.Windows.Forms.GroupBox grpBoxMoreInfo;
         private System.Windows.Forms.CheckBox chkMoreInfo;
+        private System.Windows.Forms.DataGridView gridViewAdditionalInfo;
+        private System.Windows.Forms.GroupBox grpBoxResults;
+        private System.Windows.Forms.Button btnStopAnalysis;
+        private System.Windows.Forms.Button btnExportReport;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn recommendationDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn referenceUrlDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridView gridViewAdditionalInfo;
-        private System.Windows.Forms.GroupBox grpBoxResults;
-        private System.Windows.Forms.Button btnStopAnalysis;
     }
 }
 

@@ -1,15 +1,22 @@
-﻿using SecurityTestAssistant.Library.Models.Report;
+﻿using ReportGeneratorUtils;
+using SecurityTestAssistant.Library.Extensions;
 using System.Collections.Generic;
 
 namespace SecurityTestAssistant.Library.Models
 {
-    public enum FindingType
+    public enum SeverityType
     {
         None = 0,
         Error = 1,
         Warning = 2,
         Info = 3,
         Appreciation = 4
+    }
+
+    public class GroupedAnalysisResult
+    {
+        public SeverityType Severity { get; set; }
+        public IList<AnalysisResult> Results { get; set; }
     }
 
     public class AnalysisResult
@@ -21,7 +28,7 @@ namespace SecurityTestAssistant.Library.Models
 
         public AnalysisResult(
             string findingMessage,
-            FindingType findingType,
+            SeverityType severity,
             string recommendation,
             string testType,
             IEnumerable<KeyValuePair<string, string>> additionalProps,
@@ -29,17 +36,16 @@ namespace SecurityTestAssistant.Library.Models
         {
             this.FindingMessage = findingMessage;
             this.Recommendation = recommendation;
-            this.FindingType = findingType;
+            this.Severity = severity;
             this.AdditionalProperties = additionalProps;
             this.TestType = testType;
             this.ReferenceUrl = referenceUrl;
         }
 
-        [ReportDisplay("Additional details")]
         public IEnumerable<KeyValuePair<string, string>> AdditionalProperties { get; private set; }
 
-        [ReportDisplay("Finding type")]
-        public FindingType FindingType { get; private set; }
+        [ReportDisplay("Severity")]
+        public SeverityType Severity { get; private set; }
 
         [ReportDisplay("Message")]
         public string FindingMessage { get; private set; }
@@ -50,7 +56,13 @@ namespace SecurityTestAssistant.Library.Models
         [ReportDisplay("Test type")]
         public string TestType { get; private set; }
 
-        [ReportDisplay("Reference Url")]
         public IEnumerable<string> ReferenceUrl { get; private set; }
+
+        [ReportDisplay("Reference Urls")]
+        public string ReferenceUrlsAsString => this.ReferenceUrl.ToString(" ; ");
+
+        [ReportDisplay("Additional details")]
+        public string AdditionalPropertiesAsString => this.AdditionalProperties.ToString(" : ", ",");
+
     }
 }

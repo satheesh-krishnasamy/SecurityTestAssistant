@@ -44,7 +44,7 @@ namespace SecurityTestAssistant.Library.Testers.Implementation
 
                         base.AddResult(new AnalysisResult(
                             $"{cki.Name} : Cookies names with the prefixes __Secure- can be used only if they are set with the \"secure\" attribute.",
-                            FindingType.Warning,
+                            SeverityType.Warning,
                             $"Review and apply \"secure\" attribute for the cookie {cki.Name}",
                             "Cookie prefixes",
                             response.GetAdditionalProperties(),
@@ -55,7 +55,7 @@ namespace SecurityTestAssistant.Library.Testers.Implementation
                     {
                         base.AddResult(new AnalysisResult(
                             $"{cki.Name} : Cookies names with the prefixes __Secure- can be used only if they are from a secure (HTTPS) origin.",
-                            FindingType.Warning,
+                            SeverityType.Warning,
                             $"cookie {cki.Name} : Ensure the site is accessed ony via HTTPs.",
                             "Cookie prefixes",
                             response.GetAdditionalProperties(),

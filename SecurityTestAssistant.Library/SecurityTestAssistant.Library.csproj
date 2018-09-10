@@ -37,6 +37,9 @@
     <Reference Include="BouncyCastle.Crypto, Version=1.8.2.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
       <HintPath>..\packages\Portable.BouncyCastle.1.8.2\lib\net40\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
+    <Reference Include="ReportGeneratorUtils, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Simple.Report.Generator.Utils.1.0.0\lib\netstandard2.0\ReportGeneratorUtils.dll</HintPath>
+    </Reference>
     <Reference Include="StreamExtended, Version=1.0.179.0, Culture=neutral, PublicKeyToken=bbfa0f1d54f50043, processorArchitecture=MSIL">
       <HintPath>..\packages\StreamExtended.1.0.179\lib\net45\StreamExtended.dll</HintPath>
     </Reference>
@@ -75,7 +78,6 @@
     <Compile Include="Models\Profile\IKnowledge.cs" />
     <Compile Include="Models\Profile\IQuestion.cs" />
     <Compile Include="Models\Profile\QuestionType.cs" />
-    <Compile Include="Models\Report\ReportDisplayAttribute.cs" />
     <Compile Include="Config\ReferenceUrls.cs" />
     <Compile Include="Models\Net\HttpClasses.cs" />
     <Compile Include="Net\HTTPRequestResponseInterceptor.cs" />

@@ -1,11 +1,14 @@
 ﻿namespace SecurityTestAssistant
 {
+    using ReportGeneratorUtils;
+    using ReportGeneratorUtils.Utils;
     using SecurityTestAssistant.Library.Logic;
     using SecurityTestAssistant.Library.Models;
     using SecurityTestAssistant.Library.Net;
     using SecurityTestAssistant.Library.Testers;
     using System;
     using System.Collections.Generic;
+    using System.IO;
     using System.Linq;
     using System.Net;
     using System.Threading;
@@ -219,7 +222,7 @@
                 else
                 {
                     MessageBox.Show("Please provide a  valid URL");
-                    if(txtUrlToAnalyse.CanFocus)
+                    if (txtUrlToAnalyse.CanFocus)
                     {
                         txtUrlToAnalyse.SelectAll();
                         txtUrlToAnalyse.Focus();
@@ -230,19 +233,106 @@
 
         private void DisplayResults(bool shouldGroup)
         {
+            resultBindingSource.DataSource = this.GetResults(shouldGroup);
+        }
+
+        private IList<AnalysisResult> GetResults(bool shouldGroup)
+        {
             if (shouldGroup)
             {
-                var tmpResults = reportDataCollector.Results
-                    .GroupBy(r => new { r.TestType, r.FindingType, r.FindingMessage, r.Recommendation })
+                return reportDataCollector.Results
+                    .GroupBy(r => new { r.TestType, r.Severity, r.FindingMessage, r.Recommendation })
                     .Select(a => a.FirstOrDefault())
                     .ToList();
-                resultBindingSource.DataSource = tmpResults;
-                //resultsGrid.DataSource = resultBindingSource;
             }
             else
             {
-                resultBindingSource.DataSource = reportDataCollector.Results;
-                //resultsGrid.DataSource = resultBindingSource;
+                return reportDataCollector.Results.ToList();
+            }
+        }
+
+        private IList<AnalysisResult> FilterBySeverity(IList<AnalysisResult> results, SeverityType severityType)
+        {
+            var filteredResult = results.Where(p => p.Severity == severityType);
+            if (filteredResult == null)
+            {
+                return null;
+            }
+            else
+            {
+                return filteredResult.ToList();
+            }
+        }
+
+        private void ExportReport()
+        {
+            var resultsCollection = this.GetResults(chkGroupResults.Checked);
+            IReportBuilder reportGenerator = new HtmlReportBuilder();
+
+            var errors = this.FilterBySeverity(resultsCollection, SeverityType.Error);
+            if (errors.Count > 0)
+            {
+                reportGenerator.AppendReportSection(
+                  ReportSectionDisplayType.Table,
+                  errors,
+                  "Severity: Error",
+                  string.Empty);
+            }
+
+            var warnings = this.FilterBySeverity(resultsCollection, SeverityType.Warning);
+            if (warnings.Count > 0)
+            {
+                reportGenerator.AppendReportSection(
+                  ReportSectionDisplayType.Table,
+                  warnings,
+                  "Severity: warning",
+                  string.Empty);
+            }
+
+            var infos = this.FilterBySeverity(resultsCollection, SeverityType.Info);
+            if (infos.Count > 0)
+            {
+                reportGenerator.AppendReportSection(
+                  ReportSectionDisplayType.Table,
+                  infos,
+                  "Severity: information",
+                  string.Empty);
+            }
+
+            var appreciations = this.FilterBySeverity(resultsCollection, SeverityType.Appreciation);
+            if (appreciations.Count > 0)
+            {
+                reportGenerator.AppendReportSection(
+                  ReportSectionDisplayType.Table,
+                  appreciations,
+                  "Other good things",
+                  string.Empty);
+            }
+
+            var htmlReport = reportGenerator.Build(
+                "Analysis result",
+                string.Empty,
+                "Copyright © MyCompany");
+
+            // save the file
+            var reportFilePath = $"Reports\\HTMLReport_{DateTime.Now.ToString("yyyyMMddhhmmss")}.html";
+            IReportSaver saver = new ReportFileSaver();
+            saver.SaveReport(Path.Combine(Environment.CurrentDirectory, reportFilePath), htmlReport, true);
+            openFolderInWindowsExplorer(reportFilePath, "");
+        }
+
+        private void openFolderInWindowsExplorer(string path, string args)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(args))
+                    args = string.Empty;
+
+                System.Diagnostics.Process.Start(path, args);
+            }
+            catch (Exception excep)
+            {
+                MessageBox.Show("There was an error in opening your report. " + excep.Message);
             }
         }
 
@@ -326,6 +416,11 @@
             {
                 StopTestingClicked();
             }
+        }
+
+        private void btnExportReport_Click(object sender, EventArgs e)
+        {
+            this.ExportReport();
         }
     }
 }

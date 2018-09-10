@@ -34,7 +34,7 @@
             {
                 base.AddResult(new AnalysisResult(
                     $"{cki.Name} : Cookie must be secure if it is not intended to send via unsecure Http channel.",
-                    FindingType.Warning,
+                    SeverityType.Warning,
                     $"Review and apply httponly attribute for the cookie {cki.Name}",
                     "Http cookie",
                     response.GetAdditionalProperties(),

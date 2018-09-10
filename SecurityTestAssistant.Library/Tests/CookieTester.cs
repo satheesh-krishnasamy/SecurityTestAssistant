@@ -48,7 +48,7 @@
                                 {
                                     var result = new AnalysisResult(
                                         "Missing secure attribute: Cookie can be set with secure attribute as true, to send it via only HTTPS.",
-                                        FindingType.Error,
+                                        SeverityType.Error,
                                         "Review and apply the secure attribute",
                                         "Missing Secure attribute",
                                         page.ToDictionary(),
@@ -62,7 +62,7 @@
                             {
                                 var result = new AnalysisResult(
                                         "Missing HTTP only attribute: Cookie can be marked http only if it is not expected to be accessed from javascript/VB script.",
-                                        p.IsSessionCookie ? FindingType.Error : FindingType.Warning,
+                                        p.IsSessionCookie ? SeverityType.Error : SeverityType.Warning,
                                         "Review and apply httponly attribute.",
                                         "Missing http only attribute",
                                         page.ToDictionary(),

@@ -44,7 +44,7 @@ namespace SecurityTestAssistant.Library.Testers.Implementation
                     this.AddResult(
                                 new AnalysisResult(
                                     $"Cookie {cki.Name} discloses the technologies and programming languages used by the web application [Found Technology: {cookieOfTechnology.MatchingPattern.Technology}].",
-                                    FindingType.Error,
+                                    SeverityType.Error,
                                     "Change the default cookie name used by the web development framework to a generic name, such as -id",
                                     "Server fingerprinting",
                                     response.GetAdditionalProperties(),
