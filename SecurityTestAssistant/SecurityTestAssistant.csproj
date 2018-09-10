@@ -37,8 +37,8 @@
       <HintPath>..\packages\Portable.BouncyCastle.1.8.3\lib\net40\BouncyCastle.Crypto.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="ReportGeneratorUtils, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Simple.Report.Generator.Utils.1.0.1\lib\netstandard2.0\ReportGeneratorUtils.dll</HintPath>
+    <Reference Include="ReportGeneratorUtils, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Simple.Report.Generator.Utils.1.0.2\lib\netstandard2.0\ReportGeneratorUtils.dll</HintPath>
     </Reference>
     <Reference Include="SimpleInjector, Version=4.3.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
       <HintPath>..\packages\SimpleInjector.4.3.0\lib\net45\SimpleInjector.dll</HintPath>
@@ -103,6 +103,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Schema\ReviewReport.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -112,6 +115,11 @@
       <Project>{7ed29eba-a39e-49dc-a62f-e6cf145ed1eb}</Project>
       <Name>SecurityTestAssistant.Library</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Templates\HTMLReport.xslt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
