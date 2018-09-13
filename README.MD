@@ -6,7 +6,7 @@ This application helps you to find the basic security issues in web application.
 2. Or download the source code, compile it targeting the require OS/platform and run it.
 
 
-##Purpose:
+## Purpose:
 	This tool performs the analysis only on the given URL/Host.
 	The test results can be exported as a HTML report.
 	
