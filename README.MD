@@ -2,12 +2,39 @@
 This application helps you to find the basic security issues in web application. This tries to find the issues by using the OWASP standards. This app does not find all the OWASP mentioned security issues. However this application can still be used to find the basic issues. This application will be enhanced in future by carefully reviewing the possibilities of automating the logic.
 
 ## Getting Started
-1. Just download the executable (windows OS) and execute.
+1. Just download the executable (windows OS) from [https://github.com/satheesh-krishnasamy/SecurityTestAssistant/tree/master/SecurityTestAssistant/publish] and execute.
 2. Or download the source code, compile it targeting the require OS/platform and run it.
 
 
-### Prerequisites
-This tool is built in .Net framework 4.6.1.
+##Purpose:
+	This tool performs the analysis only on the given URL/Host.
+	The test results can be exported as a HTML report.
+	
+##Prerequisites:
+	This tool is built in .Net framework 4.6.1.
+	The targeting web application must disable HSTS response header to let this tool translate the HTTPs traffic.
+
+##Limitations:
+	Currently this tool can be tested with one URL at a time.
+	To perform certain analysis, the page needs to be loaded in the built-in browser component at the "Browse" tab. However you can still use other browsers to test, in which case certain tests could not be performed by this tool.
+
+##Disclaimer:
+	This tool DOES NOT SAVE the sensitive information (like username and password) although it has the access to it (since it interprets the HTTP traffic).
+	This tool intent is to identify only the web application security issues.
+	This tool can be used with production urls (if HSTS disabled which is not recommended). However it is recommended to use it with the web application hosted in test environments (Dev/QA/integration, etc.). So you no need to worry about using the production environment credentials.
+	The tool modifies your machine's proxy settings such that the HTTP traffic will be redirect to this tool during the testing. The proxy settings will be reverted back to its original values once you stop the analysis by clicking "Stop analysis" button or by closing the application.
+
+	
+##How to use this application?
+	1. Enter the URL in the textbox in the "Define" tab.
+	2. Click the "Start analysis" button.
+	3. Accept the certificate if it is prompted (for the first time)
+	4. You will be prompted to clear the cookies. This is required to perform the security analysis on the cookies set by your web application. This will delete all the cookies/cache in the internet browser (in Windows OS) if you agree to clear. You can also disagree.
+	5. You will be taken to the Browse tab where the URL will be loaded.
+	6. Navigate the pages you want to do the analysis on.
+	7. To see the results, click the "Refresh results" button in the "Finish" tab.
+	8. To stop the analysis, click on the "Stop analysis" button or close the application.
+
 
 ## Authors
 Satheeshkumar Krishnsamy
