@@ -18,19 +18,6 @@
     {
 
         private const char BULLET_CHAR = '\u2022';
-        private string instructions =
-            "Important note and disclaimer" +
-                $"{Environment.NewLine + "\t" + BULLET_CHAR} This tools decrypts your HTTPs traffic and perform common security analysis on the URLs/pages belong to the above entered domain/host." +
-                $"{Environment.NewLine + "\t" + BULLET_CHAR} This decrypted content will NEVER BE SAVED by this tool. However it is recommended that try testing it with your test environment URLs and credentials." +
-                $"{Environment.NewLine + "\t" + BULLET_CHAR} This tool acts as a proxy to your HTTP requests" +
-                $"{Environment.NewLine + "\t" + BULLET_CHAR}  This tool changes the default proxy of your machine and reverts it back once the tests are over. You can click the Stop button or close the window." +
-                $"{Environment.NewLine + "\t" + BULLET_CHAR} Disable HSTS for this URL to let this tool capture the HTTPs traffic. If it is enabled then it cannot decrypt the traffic. " +
-                $"{Environment.NewLine + "\t" + BULLET_CHAR} Use the browser in the next tab or any other browser. " +
-                $"{Environment.NewLine + "\t" + BULLET_CHAR} [In future] Some tests cannot be performed if other browsers are used to navigate your target URL. " +
-                $"{Environment.NewLine + "\t" + BULLET_CHAR} Clear the cookies in the browser before start testing. " +
-                $"{Environment.NewLine + "\t\t" + BULLET_CHAR} This is required to ensure the persisted cookies are not sent by the server." +
-                $"{Environment.NewLine + "\t\t" + BULLET_CHAR} Once cleared, the server can send cookies." +
-                $"{Environment.NewLine + "\t\t" + BULLET_CHAR} Only Cookies sent from server can be analysed.";
 
         private readonly CancellationTokenSource tokenSource;
         private readonly ISecurityTestHTTPTrafficListener httpTrafficListener;
@@ -358,7 +345,15 @@
 
         private void Main_Load(object sender, EventArgs e)
         {
-            lblInstructions.Text = instructions;
+            try
+            {
+                txtMainNotice.Text = AppCommonResource.MainNoticeSection
+                .Replace("[Bullet]", BULLET_CHAR.ToString());
+            }
+            catch
+            { /**/
+                txtMainNotice.Text = "Unable to load the instructions.";
+            }
         }
 
         private void CheckBox2_CheckedChanged(object sender, EventArgs e)

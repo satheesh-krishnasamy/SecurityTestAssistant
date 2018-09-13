@@ -32,8 +32,9 @@
             this.tabControlMainWindow = new System.Windows.Forms.TabControl();
             this.tabDefine = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grpMainWindowNoticeSection = new System.Windows.Forms.GroupBox();
+            this.txtMainNotice = new System.Windows.Forms.TextBox();
             this.btnHttpListerner = new System.Windows.Forms.Button();
-            this.lblInstructions = new System.Windows.Forms.Label();
             this.lblEnterUrlLabel = new System.Windows.Forms.Label();
             this.txtUrlToAnalyse = new System.Windows.Forms.TextBox();
             this.tabBrowse = new System.Windows.Forms.TabPage();
@@ -44,6 +45,7 @@
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.tabFinish = new System.Windows.Forms.TabPage();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.btnExportReport = new System.Windows.Forms.Button();
             this.btnStopAnalysis = new System.Windows.Forms.Button();
             this.chkMoreInfo = new System.Windows.Forms.CheckBox();
             this.chkGroupResults = new System.Windows.Forms.CheckBox();
@@ -54,15 +56,14 @@
             this.grpBoxMoreInfo = new System.Windows.Forms.GroupBox();
             this.gridViewAdditionalInfo = new System.Windows.Forms.DataGridView();
             this.hostsToListenBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnExportReport = new System.Windows.Forms.Button();
-            this.resultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.recommendationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.resultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControlMainWindow.SuspendLayout();
             this.tabDefine.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.grpMainWindowNoticeSection.SuspendLayout();
             this.tabBrowse.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -110,8 +111,12 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.groupBox1.Controls.Add(this.grpMainWindowNoticeSection);
             this.groupBox1.Controls.Add(this.btnHttpListerner);
-            this.groupBox1.Controls.Add(this.lblInstructions);
             this.groupBox1.Controls.Add(this.lblEnterUrlLabel);
             this.groupBox1.Controls.Add(this.txtUrlToAnalyse);
             this.groupBox1.Location = new System.Drawing.Point(8, 16);
@@ -120,6 +125,35 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Hosts to listen and test";
+            // 
+            // grpMainWindowNoticeSection
+            // 
+            this.grpMainWindowNoticeSection.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpMainWindowNoticeSection.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.grpMainWindowNoticeSection.Controls.Add(this.txtMainNotice);
+            this.grpMainWindowNoticeSection.Location = new System.Drawing.Point(6, 74);
+            this.grpMainWindowNoticeSection.Name = "grpMainWindowNoticeSection";
+            this.grpMainWindowNoticeSection.Size = new System.Drawing.Size(853, 265);
+            this.grpMainWindowNoticeSection.TabIndex = 6;
+            this.grpMainWindowNoticeSection.TabStop = false;
+            this.grpMainWindowNoticeSection.Text = "Useful notes";
+            // 
+            // txtMainNotice
+            // 
+            this.txtMainNotice.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMainNotice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMainNotice.Location = new System.Drawing.Point(6, 19);
+            this.txtMainNotice.Multiline = true;
+            this.txtMainNotice.Name = "txtMainNotice";
+            this.txtMainNotice.ReadOnly = true;
+            this.txtMainNotice.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtMainNotice.Size = new System.Drawing.Size(841, 240);
+            this.txtMainNotice.TabIndex = 6;
+            this.txtMainNotice.Text = "Instructions and notifications";
             // 
             // btnHttpListerner
             // 
@@ -131,16 +165,6 @@
             this.btnHttpListerner.Text = "Start analysis";
             this.btnHttpListerner.UseVisualStyleBackColor = true;
             this.btnHttpListerner.Click += new System.EventHandler(this.BtnHttpListerner_Click);
-            // 
-            // lblInstructions
-            // 
-            this.lblInstructions.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInstructions.ForeColor = System.Drawing.Color.Black;
-            this.lblInstructions.Location = new System.Drawing.Point(6, 58);
-            this.lblInstructions.Name = "lblInstructions";
-            this.lblInstructions.Size = new System.Drawing.Size(853, 284);
-            this.lblInstructions.TabIndex = 5;
-            this.lblInstructions.Text = "Instructions and notifications";
             // 
             // lblEnterUrlLabel
             // 
@@ -263,6 +287,17 @@
             this.splitContainer2.SplitterDistance = 36;
             this.splitContainer2.TabIndex = 0;
             // 
+            // btnExportReport
+            // 
+            this.btnExportReport.AutoSize = true;
+            this.btnExportReport.Location = new System.Drawing.Point(193, 5);
+            this.btnExportReport.Name = "btnExportReport";
+            this.btnExportReport.Size = new System.Drawing.Size(124, 23);
+            this.btnExportReport.TabIndex = 14;
+            this.btnExportReport.Text = "Export as HTML report";
+            this.btnExportReport.UseVisualStyleBackColor = true;
+            this.btnExportReport.Click += new System.EventHandler(this.btnExportReport_Click);
+            // 
             // btnStopAnalysis
             // 
             this.btnStopAnalysis.Location = new System.Drawing.Point(98, 5);
@@ -304,9 +339,9 @@
             this.btnShowResults.AutoSize = true;
             this.btnShowResults.Location = new System.Drawing.Point(8, 5);
             this.btnShowResults.Name = "btnShowResults";
-            this.btnShowResults.Size = new System.Drawing.Size(84, 23);
+            this.btnShowResults.Size = new System.Drawing.Size(87, 23);
             this.btnShowResults.TabIndex = 10;
-            this.btnShowResults.Text = "Show results";
+            this.btnShowResults.Text = "Refresh results";
             this.btnShowResults.UseVisualStyleBackColor = true;
             this.btnShowResults.Click += new System.EventHandler(this.BtnShowResults_Click);
             // 
@@ -347,7 +382,6 @@
             this.resultsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.resultsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.recommendationDataGridViewTextBoxColumn});
             this.resultsGrid.DataSource = this.resultBindingSource;
@@ -386,21 +420,6 @@
             // 
             this.hostsToListenBindingSource.AllowNew = false;
             // 
-            // btnExportReport
-            // 
-            this.btnExportReport.AutoSize = true;
-            this.btnExportReport.Location = new System.Drawing.Point(193, 5);
-            this.btnExportReport.Name = "btnExportReport";
-            this.btnExportReport.Size = new System.Drawing.Size(124, 23);
-            this.btnExportReport.TabIndex = 14;
-            this.btnExportReport.Text = "Export as HTML report";
-            this.btnExportReport.UseVisualStyleBackColor = true;
-            this.btnExportReport.Click += new System.EventHandler(this.btnExportReport_Click);
-            // 
-            // resultBindingSource
-            // 
-            this.resultBindingSource.DataSource = typeof(SecurityTestAssistant.Library.Models.AnalysisResult);
-            // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -409,15 +428,6 @@
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
             this.dataGridViewTextBoxColumn4.Width = 80;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "FindingType";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Severity";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 70;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -436,6 +446,10 @@
             this.recommendationDataGridViewTextBoxColumn.ReadOnly = true;
             this.recommendationDataGridViewTextBoxColumn.Width = 115;
             // 
+            // resultBindingSource
+            // 
+            this.resultBindingSource.DataSource = typeof(SecurityTestAssistant.Library.Models.AnalysisResult);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -443,13 +457,15 @@
             this.ClientSize = new System.Drawing.Size(889, 419);
             this.Controls.Add(this.tabControlMainWindow);
             this.Name = "Main";
-            this.Text = "Web App Security analysis assistant";
+            this.Text = "Web ApplicationSecurity Test Assistant";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Main_Load);
             this.tabControlMainWindow.ResumeLayout(false);
             this.tabDefine.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.grpMainWindowNoticeSection.ResumeLayout(false);
+            this.grpMainWindowNoticeSection.PerformLayout();
             this.tabBrowse.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
@@ -496,7 +512,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtUrlToAnalyse;
         private System.Windows.Forms.Label lblEnterUrlLabel;
-        private System.Windows.Forms.Label lblInstructions;
         private System.Windows.Forms.Button btnHttpListerner;
         private System.Windows.Forms.BindingSource hostsToListenBindingSource;
         private System.Windows.Forms.SplitContainer splitContainer3;
@@ -510,6 +525,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn recommendationDataGridViewTextBoxColumn;
+        private System.Windows.Forms.GroupBox grpMainWindowNoticeSection;
+        private System.Windows.Forms.TextBox txtMainNotice;
     }
 }
 
