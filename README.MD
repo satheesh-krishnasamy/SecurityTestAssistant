@@ -3,7 +3,7 @@ This application helps you to find the basic security issues in web application.
 
 ## Getting Started
 1. Just download the executable (windows OS) from [https://github.com/satheesh-krishnasamy/SecurityTestAssistant/tree/master/SecurityTestAssistant/publish] and execute.
-2. Or download the source code, compile it targeting the require OS/platform and run it.
+2. Or download the source code, compile it targeting the required OS/platform and run it.
 
 
 ## Purpose
