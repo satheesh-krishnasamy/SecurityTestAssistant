@@ -22,7 +22,7 @@ To perform certain analysis, the page needs to be loaded in the built-in browser
 This tool DOES NOT SAVE the sensitive information (like username and password) although it has the access to it (since it interprets the HTTP traffic).
 This tool intent is to identify only the web application security issues.
 This tool can be used with production urls (if HSTS disabled which is not recommended). However it is recommended to use it with the web application hosted in test environments (Dev/QA/integration, etc.). So you no need to worry about using the production environment credentials.
-The tool modifies your machine's proxy settings such that the HTTP traffic will be redirect to this tool during the testing. The proxy settings will be reverted back to its original values once you stop the analysis by clicking "Stop analysis" button or by closing the application.
+The tool modifies your machine's proxy settings such that the HTTP traffic will be redirected to this tool during the testing. The proxy settings will be reverted back to its original values once you stop the analysis by clicking "Stop analysis" button or by closing the application.
 
 
 ## How to use this application?
