@@ -40,7 +40,7 @@
                     $"Review and apply secure attribute for the cookie {cki.Name}",
                     "Secure cookie",
                     response.GetAdditionalProperties(),
-                    this.Config.References.SecureCookieAttribute));
+                    this.Config.References.Urls["SecureCookieAttribute"]));
             }
         }
 

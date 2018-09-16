@@ -1,13 +1,10 @@
-﻿using SecurityTestAssistant.Library.Config;
-using SecurityTestAssistant.Library.Models;
-using SecurityTestAssistant.Library.Net;
-using SecurityTestAssistant.Library.Utils;
-using System;
-using System.Collections.Generic;
-using System.Text.RegularExpressions;
-
-namespace SecurityTestAssistant.Library.Testers.Implementation
+﻿namespace SecurityTestAssistant.Library.Testers.Implementation
 {
+    using SecurityTestAssistant.Library.Config;
+    using SecurityTestAssistant.Library.Models;
+    using SecurityTestAssistant.Library.Net;
+    using SecurityTestAssistant.Library.Utils;
+    
     /// <summary>
     /// Class verifies the server fingerprinting attack using the cookie names
     /// </summary>
@@ -48,7 +45,7 @@ namespace SecurityTestAssistant.Library.Testers.Implementation
                                     "Change the default cookie name used by the web development framework to a generic name, such as -id",
                                     "Server fingerprinting",
                                     response.GetAdditionalProperties(),
-                                    this.Config.References.SessionIDNameFingerprinting));
+                                    this.Config.References.Urls["SessionIDNameFingerprinting"]));
                 }
             }
         }

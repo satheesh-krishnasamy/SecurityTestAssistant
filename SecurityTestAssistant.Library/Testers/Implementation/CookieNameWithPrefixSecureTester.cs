@@ -48,7 +48,7 @@ namespace SecurityTestAssistant.Library.Testers.Implementation
                             $"Review and apply \"secure\" attribute for the cookie {cki.Name}",
                             "Cookie prefixes",
                             response.GetAdditionalProperties(),
-                            this.Config.References.CookiePrefixes));
+                            this.Config.References.Urls["CookiePrefixes"]));
                     }
 
                     if (response.UrlScheme != UrlScheme.Https)
@@ -59,7 +59,7 @@ namespace SecurityTestAssistant.Library.Testers.Implementation
                             $"cookie {cki.Name} : Ensure the site is accessed ony via HTTPs.",
                             "Cookie prefixes",
                             response.GetAdditionalProperties(),
-                            this.Config.References.CookiePrefixes));
+                            this.Config.References.Urls["CookiePrefixes"]));
                     }
                 }
             }

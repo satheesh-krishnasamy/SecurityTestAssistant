@@ -1,0 +1,38 @@
+[
+  {
+    "ServerOrTechnologyName": "IIS",
+    "SourceType": "HTTP Header Server",
+    "PatternText": "(?i)(?<= |^)(microsoft|IIS)(?= |$)",
+    "PatternType": 1
+  },
+  {
+    "ServerOrTechnologyName": "Kestrel",
+    "SourceType": "HTTP Header Server",
+    "PatternText": "(?i)(?<= |^)(Kestrel)(?= |$)",
+    "PatternType": 1
+  },
+  {
+    "ServerOrTechnologyName": "Apache",
+    "SourceType": "HTTP Header Server",
+    "PatternText": "(?i)(?<= |^)(apache)(?= |$)",
+    "PatternType": 1
+  },
+  {
+    "ServerOrTechnologyName": "NginX",
+    "SourceType": "HTTP Header Server",
+    "PatternText": "(?i)(?<= |^)(nginx)(?= |$)",
+    "PatternType": 1
+  },
+  {
+    "ServerOrTechnologyName": "Netscape",
+    "SourceType": "HTTP Header Server",
+    "PatternText": "(?i)(?<= |^)(Netscape)(?= |$)",
+    "PatternType": 1
+  },
+  {
+    "ServerOrTechnologyName": "SunONE",
+    "SourceType": "HTTP Header Server",
+    "PatternText": "(?i)(?<= |^)(Sun-ONE-Web-Server|SunONE)(?= |$)",
+    "PatternType": 1
+  }
+]

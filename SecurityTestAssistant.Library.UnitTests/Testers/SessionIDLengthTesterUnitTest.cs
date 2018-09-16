@@ -35,9 +35,9 @@ namespace SecurityTestAssistant.Library.UnitTests.Net
             // Prepare the test
             var config = A.Fake<ISessionIdLengthTesterConfig>();
             A.CallTo(() => config.KnownTechCookiePatterns).Returns(
-                new List<StringPattern>
+                new List<TechnologyStringPattern>
             {
-                new StringPattern("ASP.NET_SessionId", PatternMatchType.StartsWith, "ASP.NET", "Session ID cookie"),
+                new TechnologyStringPattern("ASP.NET_SessionId", PatternMatchType.StartsWith, "ASP.NET", "Session ID cookie"),
             });
 
             IResponseAnalyser serverFingerprintingByCookieTester = new SessionIdLengthTester(config);
@@ -67,9 +67,9 @@ namespace SecurityTestAssistant.Library.UnitTests.Net
             // Prepare the test
             var config = A.Fake<ISessionIdLengthTesterConfig>();
             A.CallTo(() => config.KnownTechCookiePatterns).Returns(
-                new List<StringPattern>
+                new List<TechnologyStringPattern>
             {
-                new StringPattern("ASP.NET_SessionId", PatternMatchType.StartsWith, "ASP.NET", "Session ID cookie"),
+                new TechnologyStringPattern("ASP.NET_SessionId", PatternMatchType.StartsWith, "ASP.NET", "Session ID cookie"),
             });
 
             IResponseAnalyser serverFingerprintingByCookieTester = new SessionIdLengthTester(config);
@@ -98,9 +98,9 @@ namespace SecurityTestAssistant.Library.UnitTests.Net
             // Prepare the test
             var config = A.Fake<ISessionIdLengthTesterConfig>();
             A.CallTo(() => config.KnownTechCookiePatterns).Returns(
-                new List<StringPattern>
+                new List<TechnologyStringPattern>
             {
-                new StringPattern("ASP.NET_SessionId", PatternMatchType.StartsWith, "ASP.NET", "Session ID cookie"),
+                new TechnologyStringPattern("ASP.NET_SessionId", PatternMatchType.StartsWith, "ASP.NET", "Session ID cookie"),
             });
 
             IResponseAnalyser serverFingerprintingByCookieTester = new SessionIdLengthTester(config);
@@ -126,9 +126,9 @@ namespace SecurityTestAssistant.Library.UnitTests.Net
             // Prepare the test
             var config = A.Fake<ISessionIdLengthTesterConfig>();
             A.CallTo(() => config.KnownTechCookiePatterns).Returns(
-                new List<StringPattern>
+                new List<TechnologyStringPattern>
             {
-                new StringPattern("ASP.NET_SessionId", PatternMatchType.StartsWith, "ASP.NET", "Session ID cookie"),
+                new TechnologyStringPattern("ASP.NET_SessionId", PatternMatchType.StartsWith, "ASP.NET", "Session ID cookie"),
             });
 
             IResponseAnalyser serverFingerprintingByCookieTester = new SessionIdLengthTester(config);
@@ -157,9 +157,9 @@ namespace SecurityTestAssistant.Library.UnitTests.Net
             // Prepare the test
             var config = A.Fake<ISessionIdLengthTesterConfig>();
             A.CallTo(() => config.KnownTechCookiePatterns).Returns(
-                new List<StringPattern>
+                new List<TechnologyStringPattern>
             {
-                new StringPattern("ASP.NET_SessionId", PatternMatchType.StartsWith, "ASP.NET", "Session ID cookie"),
+                new TechnologyStringPattern("ASP.NET_SessionId", PatternMatchType.StartsWith, "ASP.NET", "Session ID cookie"),
             });
 
             IResponseAnalyser serverFingerprintingByCookieTester = new SessionIdLengthTester(config);

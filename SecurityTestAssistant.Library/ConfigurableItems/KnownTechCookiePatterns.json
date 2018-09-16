@@ -1,0 +1,44 @@
+[
+  {
+    "Technology": "PHP",
+    "SourceType": "Session ID cookie",
+    "PatternText": "PHPSESSID",
+    "PatternType": 0
+  },
+  {
+    "Technology": "J2EE",
+    "SourceType": "Session ID cookie",
+    "PatternText": "JSESSIONID",
+    "PatternType": 0
+  },
+  {
+    "Technology": "ColdFusion",
+    "SourceType": "Session ID cookie",
+    "PatternText": "CFID",
+    "PatternType": 0
+  },
+  {
+    "Technology": "ColdFusion",
+    "SourceType": "Session ID cookie",
+    "PatternText": "CFTOKEN",
+    "PatternType": 0
+  },
+  {
+    "Technology": "ASP.NET",
+    "SourceType": "Session ID cookie",
+    "PatternText": "ASP.NET_SessionId",
+    "PatternType": 0
+  },
+  {
+    "Technology": "ASP.NET Core",
+    "SourceType": "Session ID cookie",
+    "PatternText": ".AspNetCore.Session",
+    "PatternType": 0
+  },
+  {
+    "Technology": "Asp.Net Core",
+    "SourceType": "Anti-forgery cookie name",
+    "PatternText": ".AspNetCore.Antiforgery.",
+    "PatternType": 0
+  }
+]

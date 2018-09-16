@@ -43,6 +43,9 @@
     <Reference Include="BouncyCastle.Crypto, Version=1.8.2.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
       <HintPath>..\packages\Portable.BouncyCastle.1.8.2\lib\net40\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="ReportGeneratorUtils, Version=1.0.3.0, Culture=neutral, PublicKeyToken=f7dab012cb414e27, processorArchitecture=MSIL">
       <HintPath>..\packages\Simple.Report.Generator.Utils.1.0.3\lib\netstandard2.0\ReportGeneratorUtils.dll</HintPath>
     </Reference>
@@ -66,7 +69,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Config\ISecurityApplicationConfig.cs" />
+    <Compile Include="Config\SecurityApplicationConfig.cs" />
+    <Compile Include="Config\PatternMatchType.cs" />
     <Compile Include="Config\ServerHeaderValuePatterns.cs" />
     <Compile Include="Config\PatternBase.cs" />
     <Compile Include="Extensions\ExtensionsMethods.cs" />
@@ -76,6 +80,7 @@
     <Compile Include="Logic\IApplicationReportDataProvider.cs" />
     <Compile Include="Logic\IApplicationReportPublisher.cs" />
     <Compile Include="Logic\IHttpResponseProvider.cs" />
+    <Compile Include="Config\TechnologyStringPattern.cs" />
     <Compile Include="Testers\Implementation\CookieNameWithPrefixSecureTester.cs" />
     <Compile Include="Utils\CookieParser.cs" />
     <Compile Include="Models\Events\AnalysisCompletedEventArgs.cs" />
@@ -84,7 +89,7 @@
     <Compile Include="Models\Profile\IKnowledge.cs" />
     <Compile Include="Models\Profile\IQuestion.cs" />
     <Compile Include="Models\Profile\QuestionType.cs" />
-    <Compile Include="Config\ReferenceUrls.cs" />
+    <Compile Include="Config\TestReference.cs" />
     <Compile Include="Models\Net\HttpClasses.cs" />
     <Compile Include="Net\HTTPRequestResponseInterceptor.cs" />
     <Compile Include="Net\ISecurityTestHTTPTrafficListener.cs" />
@@ -112,6 +117,15 @@
     <Compile Include="Utils\PatternMatchUtil.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ConfigurableItems\KnownServerHeaders.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ConfigurableItems\KnownTechCookiePatterns.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ConfigurableItems\ReferenceUrlsConfig.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="packages.config" />
     <None Include="Schema\ReviewReport.xsd">
       <SubType>Designer</SubType>

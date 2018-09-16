@@ -74,10 +74,12 @@
     <ManifestKeyFile>SecurityTestAssistant_2_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AutoMapper, Version=7.0.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005" />
     <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
       <HintPath>..\packages\Portable.BouncyCastle.1.8.3\lib\net40\BouncyCastle.Crypto.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="ReportGeneratorUtils, Version=1.0.3.0, Culture=neutral, PublicKeyToken=f7dab012cb414e27, processorArchitecture=MSIL">
       <HintPath>..\packages\Simple.Report.Generator.Utils.1.0.3\lib\netstandard2.0\ReportGeneratorUtils.dll</HintPath>
@@ -184,7 +186,7 @@
   <ItemGroup>
     <Content Include="MainNotice.txt" />
     <Content Include="Templates\HTMLReport.xslt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

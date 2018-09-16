@@ -59,7 +59,7 @@ namespace SecurityTestAssistant.Library.Testers.Implementation
                         $"Use a lengthy value for cookie ({cookie.Name}). Refer the URL.",
                         "Session ID length",
                         response.GetAdditionalProperties(),
-                        this.config.References.SessionIDLengthMustBeLong));
+                        this.config.References.Urls["SessionIDLengthMustBeLong"]));
                 }
             }
         }

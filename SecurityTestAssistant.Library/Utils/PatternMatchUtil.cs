@@ -2,22 +2,23 @@
 {
     using SecurityTestAssistant.Library.Config;
     using System.Collections.Generic;
+    using System.Linq;
 
-    public class PatternMatchResult
+    internal class PatternMatchResult
     {
         public bool MatchFound { get; internal set; }
-        public StringPattern MatchingPattern { get; internal set; }
+        public TechnologyStringPattern MatchingPattern { get; internal set; }
     }
 
 
-    public static class PatternMatchUtil
+    internal static class PatternMatchUtil
     {
-        public static PatternMatchResult CheckPatternMatch(string inputToMatch, IList<StringPattern> patterns)
+        public static PatternMatchResult CheckPatternMatch(string inputToMatch, IEnumerable<TechnologyStringPattern> patterns)
         {
 
             PatternMatchResult result = new PatternMatchResult();
 
-            if (!string.IsNullOrWhiteSpace(inputToMatch) && patterns != null && patterns.Count > 0)
+            if (!string.IsNullOrWhiteSpace(inputToMatch) && patterns != null && patterns.Count() > 0)
             {
                 foreach (var currPattern in patterns)
                 {

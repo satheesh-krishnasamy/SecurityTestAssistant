@@ -1,0 +1,10 @@
+{
+  "Urls": {
+    "SecureCookieAttribute": [ "https://www.owasp.org/index.php/Session_Management_Cheat_Sheet#Secure_Attribute", "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#Compatibility_notes" ],
+    "HttpOnlyCookie": [ "https://www.owasp.org/index.php/Session_Management_Cheat_Sheet#HttpOnly_Attribute" ],
+    "CookiePrefixes": [ "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#Cookie_prefixes" ],
+    "SessionIDNameFingerprinting": [ "https://www.owasp.org/index.php/Session_Management_Cheat_Sheet#Session_ID_Name_Fingerprinting" ],
+    "SessionIDLengthMustBeLong": [ "https://www.owasp.org/index.php/Session_Management_Cheat_Sheet#Session_ID_Length" ],
+    "ServerHeader": [ "https://www.owasp.org/index.php/Fingerprint_Web_Server_(OTG-INFO-002)" ]
+  }
+}

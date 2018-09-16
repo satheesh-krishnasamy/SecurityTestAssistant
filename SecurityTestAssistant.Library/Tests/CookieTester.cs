@@ -24,7 +24,6 @@
             pages = new List<TestPage>();
             this.cancellationToken = tokenSource.Token;
             this.config = config;
-
         }
 
         private void AnalysePage(TestPage page)
@@ -52,7 +51,7 @@
                                         "Review and apply the secure attribute",
                                         "Missing Secure attribute",
                                         page.ToDictionary(),
-                                        this.config.References.SecureCookieAttribute);
+                                        this.config.References.Urls["SecureCookieAttribute"]);
 
                                     this.HandleAnalysisResult(this, new AnalysisCompletedEventAgrs(result));
                                 }
@@ -66,7 +65,7 @@
                                         "Review and apply httponly attribute.",
                                         "Missing http only attribute",
                                         page.ToDictionary(),
-                                        this.config.References.HttpOnlyCookie);
+                                        this.config.References.Urls["HttpOnlyCookie"]);
 
                                 this.HandleAnalysisResult(this, new AnalysisCompletedEventAgrs(result));
                             }

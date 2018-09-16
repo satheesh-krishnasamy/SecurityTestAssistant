@@ -51,7 +51,7 @@ namespace SecurityTestAssistant.Library.Testers.Implementation
                                     "Remove the header or change the value for this header to some other value that does not say anything about the server.",
                                     "Server fingerprinting",
                                     response.GetAdditionalProperties(),
-                                    this.Config.References.ServerHeader));
+                                    this.Config.References.Urls["ServerHeader"]));
 
                 }
             }

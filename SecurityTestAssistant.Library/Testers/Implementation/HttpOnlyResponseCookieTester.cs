@@ -38,7 +38,7 @@
                     $"Review and apply httponly attribute for the cookie {cki.Name}",
                     "Http cookie",
                     response.GetAdditionalProperties(),
-                    this.Config.References.HttpOnlyCookie));
+                    this.Config.References.Urls["HttpOnlyCookie"]));
             }
         }
     }
